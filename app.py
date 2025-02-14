@@ -3,14 +3,7 @@ import requests
 import socket
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
-@app.route('/')
-def home():
-    return "Hello, World!"
-
-@app.route('/json')
-def json_example():
-    return jsonify(message="This is a JSON response")
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)
