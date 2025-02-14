@@ -1,4 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+import requests
+import socket
 
 app = Flask(__name__)
 
@@ -10,6 +12,5 @@ def home():
 def json_example():
     return jsonify(message="This is a JSON response")
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+app.run(debug=True, port=5001)
 
