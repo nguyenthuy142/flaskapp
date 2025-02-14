@@ -11,4 +11,5 @@ def json_example():
     return jsonify(message="This is a JSON response")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
+
