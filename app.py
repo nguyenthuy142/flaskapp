@@ -1,9 +1,14 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-import requests
-import socket
+from flask import Flask, jsonify
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
 
-if __name__ == '__main__':
+@app.route('/')
+def home():
+    return "Hello, World!"
+
+@app.route('/json')
+def json_example():
+    return jsonify(message="This is a JSON response")
+
+if __name__ == "__main__":
     app.run(debug=True)
